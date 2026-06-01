@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Presentación</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            nav a {
+                text-decoration: none;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3">
+                <a href="#">Formulario de Presentación</a>
+            </nav>
+        </header>
+        <main>
+            <div class="container mt-3 p-2">
+                <div class="card shadow p-3">
+                    <div class="m-1">
+                        <label class="form-label" for="nombre">Nombre :</label>
+                        <input class="form-control" id="nombre">
+                    </div>
+                    <div class="m-1">
+                        <label class="form-label" for="edad">Edad :</label>
+                        <input class="form-control" id="edad">
+                    </div>
+                    <div class="m-1">
+                        <label class="form-label" for="carrera">Carrera :</label>
+                        <input class="form-control" id="carrera">
+                    </div>
+                    <div class="m-1">
+                        <button class="btn btn-primary" onclick="extraer();">Extraer datos</button>
+                    </div>
+                </div>
+                
+                <div class="card shadow mt-3 p-3">
+                    <div class="card-body">
+                        <h2>Datos</h2>
+                        <p id="dato-nombre">-</p>
+                        <p id="dato-edad">-</p>
+                        <p id="dato-carrera">-</p>
+                    </div>
+                </div>
+            
+            </div>
+        </main>
+
+        <script>
+            function extraer(){
+                const nombre = document.getElementById("nombre").value;
+                const edad = document.getElementById("edad").value;
+                const carrera = document.getElementById("carrera").value;
+
+                document.getElementById("dato-nombre").textContent = nombre;
+                document.getElementById("dato-edad").textContent = edad;
+                document.getElementById("dato-carrera").textContent = carrera;
+            }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
