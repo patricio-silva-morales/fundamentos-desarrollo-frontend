@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Saludo con JQuery</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+    
+    <body>
+    <h1>Saludo con JQuery</h1>
+        <input type="text" placeholder="¿Cuál es tu nombre?" id="nombre">
+        <style> :placeholder-shown{font-size:25px; padding:5px 15px;} </style>
+        <style> button{font-size:25px; padding:5px 15px;} </style>
+        <button id="btnsaludo"> Recibir saludo </button>
+            <span id="mensaje-saludo"></span>
+        <script> $("#btnsaludo").click(function(){let nombre = $("#nombre").val(); let saludo = "Hola " + nombre +", Buenos Días.";$("#mensaje-saludo").text(saludo); alert(saludo);});
+        </script>
+</body>
+</html>

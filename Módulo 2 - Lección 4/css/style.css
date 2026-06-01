@@ -1,0 +1,15 @@
+body{
+    margin: 20px;
+}
+
+.titulo-sitio {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: right;
+}
+
+#mensaje-bienvenida{
+    font-size: 24px;
+    font-weight: bolder;
+    color: blue;
+    border: 1px 
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>calculadora</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+
+    </head>
+
+    
+    <body class="bg-body-secondary d-flex align-items-center justify-content-center vh-100" style="background-color: #955aee !important;">
+
+        <!-- Carcasa de la calculadora con estética de anime -->
+        <div class="card p-4 border border-4 border-dark rounded-4 shadow" style="background-color: #aa5795; max-width: 340px; width: 100%;">
+            
+            <h1 class="text-center h5 mb-3 fw-bold text-dark" style="font-family: 'impact', sans-serif;">✨CALCULADORA✨</h1>
+            
+            <!-- Aquí irá la pantalla -->
+            
+            <!-- Aquí irán los bo<!-- Fila 1 de botones -->
+            <div class="row g-2 mb-2">
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #158fb8;">7</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #158fb8;">8</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #158fb8;">9</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #158fb8;">÷</button></div>  
+
+            </div>
+
+            <div class="row g-2 mb-2">
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #a32c99;">4</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #d62ec8;">5</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #d62ec8;">6</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #ad5aa6;">×</button></div>
+                
+            </div>
+
+            <div class="row g-2 mb-2">
+                
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #9c7699;">1</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #c25080;">2</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #48e97e;">3</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #c25080;">-</button></div>
+
+            </div>  
+
+            <div class="row g-2 mb-2">
+
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #48e97e;">C</button></div>
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #48e97e;">0</button></div> 
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #c1eb4d;">=</button></div> 
+                <div class="col-3">
+                    <button class="btn fw-bold border border-3 border-dark rounded-3 w-100 py-3 text-dark shadow-sm" style="background-color: #ee933e;">+</button></div> 
+                
+            </div>
+            
+        
+            <input type="number" placeholder="Ingrese el primer número" id="numero1">
+
+            <input type="number" placeholder="Ingrese el segundo número" id="numero2">
+        
+            <button onclick="sumar();">Sumar </button>
+
+            <button onclick="restar();">Restar </button>
+        
+            <button onclick="multiplicar();">Multiplicar </button>
+            
+            <button onclick="dividir();">Dividir </button>
+        
+            <div id="resultado"></div>  
+
+    </body>
+</html>

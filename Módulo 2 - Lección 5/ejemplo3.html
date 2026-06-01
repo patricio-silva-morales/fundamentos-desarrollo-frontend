@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mi primera página con Javascript</title>
+    </head>
+    <body>
+        <h1>Suma</h1>
+
+        <button onclick="alert(sumar(2,3));">Sumar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+            function sumar(numero1, numero2) {
+
+                let resultado = numero1 + numero2;
+
+                document.getElementById("resultado").textContent = resultado;
+
+                return resultado;
+
+            }
+        </script>
+    </body>
+</html>
