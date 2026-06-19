@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartelera de Cine</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .pelicula {
+            border: 1px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .destacada {
+            background-color: yellow;
+        }
+
+        button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cartelera de Cine</h1>
+
+    <button onclick="contarPeliculas()">Contar películas</button>
+    <button onclick="destacarEstrenos()">Destacar estrenos</button>
+    <button onclick="mostrarGeneros()">Mostrar géneros</button>
+
+    <p id="resultado"></p>
+
+    <div class="pelicula estreno">
+        <h2>Superhéroes Unidos</h2>
+        <p name="genero">Acción</p>
+    </div>
+
+    <div class="pelicula">
+        <h2>Risas sin Fin</h2>
+        <p name="genero">Comedia</p>
+    </div>
+
+    <div class="pelicula estreno">
+        <h2>La Casa Misteriosa</h2>
+        <p name="genero">Terror</p>
+    </div>
+
+    <div class="pelicula">
+        <h2>Aventura en el Espacio</h2>
+        <p name="genero">Ciencia Ficción</p>
+    </div>
+
+    <script>
+        function contarPeliculas() {
+            let peliculas = document.getElementsByTagName("h2");
+
+            document.getElementById("resultado").textContent =
+                "Hay " + peliculas.length + " películas en cartelera.";
+        }
+
+        function destacarEstrenos() {
+            let estrenos = document.getElementsByClassName("estreno");
+
+            for (let i = 0; i < estrenos.length; i++) {
+                estrenos[i].classList.add("destacada");
+            }
+        }
+
+        function mostrarGeneros() {
+            let generos = document.getElementsByName("genero");
+            let texto = "Géneros disponibles: ";
+
+            for (let i = 0; i < generos.length; i++) {
+                texto += generos[i].textContent;
+
+                if (i < generos.length - 1) {
+                    texto += ", ";
+                }
+            }
+
+            document.getElementById("resultado").textContent = texto;
+        }
+    </script>
+
+</body>
+</html>

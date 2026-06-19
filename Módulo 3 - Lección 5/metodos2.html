@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio de objetos (métodos)</title>
+    </head>
+    <body>
+        <button onclick="metodo();">Ejecutar</button>
+        <p id="resultado"></p>
+        <script>
+            function metodo() {
+                let estudiante = {
+                    nombre: 'Agustin',
+                    edad: 17,
+                    curso: '4° año B'
+                }
+             
+                console.log(Object.keys(estudiante));
+                
+                console.log(Object.values(estudiante));
+                
+                console.log(Object.entries(estudiante));
+                
+                let profesionalestudiante = Object.assign({}, estudiante, {
+                    promedio: '64'
+                });
+                console.log(profesionalestudiante.promedio);
+               
+                let estudiantePremium = Object.create(estudiante);
+                estudiantePremium.beneficio = 'Beca excelencia academica';
+                console.log(estudiantePremium.beneficio);
+                
+                
+                Object.seal(estudiante);
+                Colegio = 'Liceo Enrique Ballacey Cottereau';
+                console.log(estudiante);
+               
+                Object.freeze(estudiante);
+                configuracion.estudiante = 'Deportista seleccionado';
+                console.log(estudiante);
+            }
+        </script>
+    </body>
+</html>

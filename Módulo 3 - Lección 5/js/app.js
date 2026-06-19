@@ -1,0 +1,28 @@
+let cantidad = Number(prompt("Ingrese la cantidad de palabras"));
+let palabras = [];
+let frase = "";
+
+for(i=0; i < cantidad; i++){
+    palabras[i] = prompt(`Ingrese la palabra ${i + 1}`);
+}
+
+frase = palabras.join(" ");
+console.log(frase);
+
+console.log(`Hay ${contarVocales(frase)} vocales`);
+
+
+function contarVocales(frase) {
+    let contar = 0;
+    let vocales = ['a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú'];
+
+    frase = frase.toLowerCase();
+    
+    for(letra of frase) {
+        if (vocales.includes(letra)) {
+            contar++;
+        } 
+    }   
+
+    return contar;
+}

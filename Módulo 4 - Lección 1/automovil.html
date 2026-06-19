@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio Clase Automóvil</title>
+    </head>
+    <body>
+        <h1>Automóvil de carrera</h1>
+        <button onclick="ejecutar();">Ejecutar</button>
+        <p id="resultado"></p>
+        <script>
+            class Automovil {
+                // Atributos privados
+                #velocidad;
+                constructor(modelo) {
+                    this.modelo = modelo;
+                    this.#velocidad = 0; // inicializamos en 0
+                }
+                acelerar(cantidad) {
+                    this.#velocidad += cantidad;
+                    if (this.#velocidad < 0) {
+                        this.#velocidad = 0;
+                    } else if (this.#velocidad > 250) {
+                        this.#velocidad = 250;
+                    }
+                }
+                frenar(cantidad) {
+                    this.#velocidad -= cantidad;
+                    if (this.#velocidad < 0) {
+                        this.#velocidad = 0;
+                    } else if (this.#velocidad > 250) {
+                        this.#velocidad = 250;
+                    }
+                }
+
+                mostrarVelocidad() {
+                    console.log(`El automóvil ${this.modelo} va a ${this.#velocidad} km/h.`);
+                }
+
+                getVelocidad() {
+                    return this.#velocidad;
+                }
+            }
+
+            // Función externa para probar la clase
+            function ejecutar() {
+                let automovil1 = new Automovil("Toyota");
+                let automovil2 = new Automovil("Honda");
+                let velocidadInicial = 100;
+                
+                automovil1.acelerar(velocidadInicial);
+                automovil1.mostrarVelocidad();  
+
+                automovil1.acelerar(150);
+                automovil1.mostrarVelocidad();
+
+                automovil1.frenar(50); 
+                automovil1.mostrarVelocidad();
+
+                automovil2.acelerar(velocidadInicial);
+                automovil2.mostrarVelocidad();  
+
+                automovil2.acelerar(100);
+                automovil2.mostrarVelocidad();
+
+                automovil2.frenar(70); 
+                automovil2.mostrarVelocidad();
+
+            }
+        </script>
+    </body>
+</html>

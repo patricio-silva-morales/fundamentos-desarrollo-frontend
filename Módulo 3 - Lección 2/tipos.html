@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo de tipos de datos</title>
+    </head>
+    <body>
+        <button onclick="tipos();">Ejecutar</button>
+
+        <script>
+            // Variable con scope global
+            var bebida = "Coca cola";
+            
+            function tipos() {
+                // Todas las variables tiene scope local
+                var nombre = "Marcela"; // Tipo String
+                var edad = 25; // Tipo Number
+                var cesante = false; // Tipo Boolean
+
+                // Variable objeto
+                var asignatura = {
+                    nombre: "Matemáticas avanzadas",
+                    nivel: "Tercer semestre",
+                    profesor: "Gastón",
+                    codigo: 123,
+                    habilitada: true
+                };
+
+                // Array (arreglo, lista)
+                var trabajadores = [
+                    'Juan',
+                    'Marcela',
+                    'Luis',
+                    'Karina',
+                    'Fernando',
+                    'Marisol',
+                    'Ernesto'
+                ];
+
+                console.log("Nombre: " + nombre);
+                console.log("Edad: " + edad);
+                console.log("Cesante: " + cesante);
+
+                console.log("Asignatura");
+                console.log("Nombre: " + asignatura.nombre);
+                console.log("Nivel: " + asignatura.nivel);
+                console.log("Profesor: " + asignatura.profesor);
+                console.log("Código: " + asignatura.codigo);
+                console.log("Habilitada: " + asignatura.habilitada);
+
+                console.log("Trabajadores: " + trabajadores);
+                console.log("Segundo trabajador: " + trabajadores[1]);
+                
+                // Posición fuera de rango: Undefined
+                // console.log(trabajadores[100]);
+
+                console.log("nombre es tipo " + typeof nombre);
+                console.log("edad es tipo " + typeof edad);
+                console.log("cesante es tipo " + typeof cesante);
+                console.log("asignatura es tipo " + typeof asignatura);
+                console.log("trabajadores es tipo " + typeof trabajadores);
+            }
+        </script>
+    </body>
+</html>

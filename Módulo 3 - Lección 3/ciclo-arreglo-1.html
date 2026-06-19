@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo de ciclo-arreglo</title>
+    </head>
+    <body>
+        <button onclick="recorrer();">Ejecutar</button>
+
+        <script>
+            function recorrer() {
+                let i;
+                
+                let colores = ['Blanco', 'Azul', 'Rojo', 'Amarillo', 'Naranjo', 'Morado', 'Café', 'Celeste', 'Gris', 'Negro'];
+                
+                // Ciclo clásico: con contador de iteraciones
+                for(i=0; i < colores.length; i++) {
+                    console.log(`Color ${colores[i]}`);
+                }
+
+                // Método del arreglo que simula un ciclo
+                colores.forEach(function(color){
+                    console.log(color);
+                });
+
+                // Ciclo que recorre los elementos de un arreglo
+                for(let color of colores) {
+                    console.log(color)
+                }
+
+            }
+        </script>
+    </body>
+</html>

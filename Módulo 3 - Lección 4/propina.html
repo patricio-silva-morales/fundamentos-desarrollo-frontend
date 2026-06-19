@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo de función cálculo de propina</title>
+    </head>
+    <body>
+        <label>Total consumo: </label><input id="total" type="number">
+        <label>Porcentaje de propina: </label><input id="porcentaje" type="number">
+        
+        <button onclick="calculo_propina();">Ejecutar</button>
+        
+        <p id="resultado"></p>
+
+        <script>
+            let monto = 0;
+            
+            function calculo_propina() {
+                let total = Number(document.getElementById("total").value);
+                let porcentaje = Number(document.getElementById("porcentaje").value);
+
+                let propina = total * (porcentaje / 100);
+                
+                document.getElementById("resultado").textContent = `Propina: ${propina} - Total a pagar: ${total + propina}`;
+            }
+
+            let resultado = monto + total;
+        </script>
+    </body>
+</html>

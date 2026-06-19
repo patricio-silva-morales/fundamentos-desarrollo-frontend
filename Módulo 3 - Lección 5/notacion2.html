@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio de objetos (notación)</title>
+    </head>
+    <body>
+        <button onclick="objeto();">Ejecutar</button>
+        <p id="resultado"></p>
+        <script>
+            function objeto() {
+                let estadio = {
+                    nombre: 'Ester Roa Rebolledo',
+                    aforo: '30448 personas',
+                    pais: 'Chile (Concepción)',
+                }
+                document.getElementById("resultado").textContent =
+                    "Nombre: " + estadio["nombre"] +
+                    " - Aforo: " + estadio["aforo"] +
+                    " - País: " + estadio["pais"];
+                console.log(`Estadio ${estadio["nombre"]} - ${estadio["aforo"]} - ${estadio["pais"]}`);
+            }
+        </script>
+    </body>
+</html>

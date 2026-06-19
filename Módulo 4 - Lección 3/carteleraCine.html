@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Sistema de Cine - Cartelera</title>
+	<style>
+		body{font-family:Arial,Helvetica,sans-serif;margin:16px}
+		.pelicula{border:1px solid #ddd;padding:12px;margin:8px 0;border-radius:6px}
+		.pelicula h3{margin:0 0 8px}
+		.estreno{box-shadow:0 0 0 3px rgba(0,150,136,0.06)}
+		.destacar{background:linear-gradient(90deg, rgba(203, 224, 243, 0.9), rgba(255,243,160,0.9));border-color:#ffd54f}
+		#controles{margin:10px 0}
+		button{margin-right:8px;padding:8px 12px}
+		#resultado{margin-top:12px;font-weight:600}
+	</style>
+</head>
+<body>
+	<h1>Cartelera - Sistema de Cine</h1>
+
+	<div id="controles">
+		<button id="btnContar">Contar películas</button>
+		<button id="btnDestacar">Destacar estrenos</button>
+		<button id="btnGeneros">Mostrar géneros</button>
+		<button id="btnReiniciar">Reiniciar</button>
+	</div>
+
+	<section id="cartelera">
+		<article class="pelicula estreno">
+			<h3>Toy Story 5</h3>
+			<p name="genero">Comedia/Aventura</p>
+			<p>Duración: 90 min</p>
+		</article>
+
+		<article class="pelicula">
+			<h3>Michael</h3>
+			<p name="genero">Musical/Drama</p>
+			<p>Duración: 124 min</p>
+		</article>
+
+		<article class="pelicula">
+			<h3>El diablo viste a la moda 2</h3>
+			<p name="genero">Comedia</p>
+			<p>Duración: 120  min</p>
+		</article>
+
+		<article class="pelicula estreno">
+			<h3>El día de la revelación</h3>
+			<p name="genero">Ciencia ficción</p>
+			<p>Duración: 145 min</p>
+		</article>
+
+		<article class="pelicula">
+			<h3>SCARY MOVIE</h3>
+			<p name="genero">Comedia</p>
+			<p>Duración: 120 min</p>
+		</article>
+	</section>
+
+	<div id="resultado" aria-live="polite"></div>
+
+	<script>
+		const btnContar = document.getElementById('btnContar');
+		const btnDestacar = document.getElementById('btnDestacar');
+		const btnGeneros = document.getElementById('btnGeneros');
+		const resultado = document.getElementById('resultado');
+
+		btnContar.addEventListener('click', () => {
+			const peliculas = document.querySelectorAll('.pelicula');
+			const total = peliculas.length;
+			resultado.textContent = `Hay ${total} películas en la cartelera.`;
+		});
+
+		btnDestacar.addEventListener('click', () => {
+			const estrenos = document.querySelectorAll('.pelicula.estreno');
+			if (estrenos.length === 0) {
+				resultado.textContent = 'No hay estrenos en la cartelera.';
+				return;
+			}
+			estrenos.forEach(el => el.classList.toggle('destacar'));
+			resultado.textContent = 'Se han resaltado los estrenos.';
+		});
+
+		btnGeneros.addEventListener('click', () => {
+			const generoElems = document.querySelectorAll('[name="genero"]');
+			const generos = Array.from(generoElems).map(e => e.textContent.trim()).filter(Boolean);
+			const unicos = [...new Set(generos)];
+			if (unicos.length === 0) {
+				resultado.textContent = 'No se encontraron géneros.';
+				return;
+			}
+			resultado.innerHTML = 'Géneros disponibles: ' + unicos.join(', ');
+		});
+
+		// Botón para reiniciar el estado de la cartelera
+		const btnReiniciar = document.getElementById('btnReiniciar');
+		btnReiniciar.addEventListener('click', () => {
+			const destacados = document.querySelectorAll('.pelicula.destacar');
+			destacados.forEach(el => el.classList.remove('destacar'));
+			resultado.textContent = '';
+		});
+	</script>
+</body>
+</html>
+

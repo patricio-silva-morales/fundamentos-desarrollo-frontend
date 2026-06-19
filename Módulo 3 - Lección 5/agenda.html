@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo de agenda</title>
+    </head>
+    <body>
+        <input id="celular" placeholder="Celular">
+
+        <button onclick="buscar_en_agenda();">Buscar</button>
+        
+        <p id="resultado"></p>
+
+        <script>
+            function buscar_en_agenda() {
+                let celular = document.getElementById("celular").value;
+
+                let resultado = "No hay contactos asociados al número";
+
+                agenda = [
+                    {
+                        nombre: 'Luis',
+                        apellido: 'Araya',
+                        celular: 987654321
+                    },
+                    {
+                        nombre: 'Karla',
+                        apellido: 'Mora',
+                        celular: 987654322
+                    }
+                ]
+
+                for(contacto of agenda) {
+                    
+                    if (Number(celular) === contacto.celular) {
+                        
+                        resultado = `Nombre: ${contacto.nombre} | Apellido: ${contacto.apellido}`;
+
+                        break;
+                    }
+                }
+
+                document.getElementById("resultado").textContent = resultado;
+            }
+        </script>
+    </body>
+</html>
